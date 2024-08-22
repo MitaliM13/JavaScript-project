@@ -24,8 +24,15 @@ app.get("/", (req, res) => {
 
 io.on("connection", (socket) => {
 
-    console.log("user Connected");
+    console.log("user Connected",socket.id);
 
+    socket.on("message", (data) => {
+        console.log(data);  
+    })
+
+    socket.on("disconnect", () => {
+        console.log(`${socket.id} disconnected`);
+    })
 })
 
 server.listen(port, () => {
