@@ -1,12 +1,11 @@
-import React from 'react';
 import bgImage from '../image/Background.png';
 
 function Hero() {
   return (
-    <div className="bg-green-300 w-full h-screen flex items-center justify-center relative overflow-hidden px-6">
+    <div className="bg-gray-200 w-full h-screen flex items-center justify-center relative overflow-hidden px-6">
       {/* Slogan and Button Section */}
       <div className="flex flex-col items-center text-center z-10 max-w-xl">
-        <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-green-600 leading-tight drop-shadow-lg mb-6">
           Discover. Shop. Thrive. Your Style, Your Way.
         </h1>
         <button className="px-6 py-3 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-green-600 hover:text-white transition transform hover:scale-105 focus:outline-none">
