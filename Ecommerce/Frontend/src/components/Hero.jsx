@@ -8,9 +8,11 @@ function Hero() {
         <h1 className="text-4xl md:text-5xl font-bold text-green-600 leading-tight drop-shadow-lg mb-6">
           Discover. Shop. Thrive. Your Style, Your Way.
         </h1>
-        <button className="px-6 py-3 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-green-600 hover:text-white transition transform hover:scale-105 focus:outline-none">
-          Shop Now
-        </button>
+        
+        {/* Just the Link component, no need to wrap it in Router */}
+          <button className="px-6 py-3 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-green-600 hover:text-white transition transform hover:scale-105 focus:outline-none">
+            Shop Now
+          </button>
       </div>
 
       {/* Image Positioned on the Right */}
