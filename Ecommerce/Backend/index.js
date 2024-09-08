@@ -175,10 +175,45 @@ app.get("/api/products", (req, res) => {
         },
         {
             id: `25`,
-            name : "Pedestal Sid Table",
+            name : "Pedestal Side Table",
             price: 1200,
             image: "https://i.pinimg.com/564x/7a/84/15/7a84152ae079cca62545b2207b0e759b.jpg",
             detail: "Design and convenience go together effortlessly with the Malibu side table. The use of mango wood, metal, and travertine creates a beautiful mix of textures and colors. The travertine base radiates design and the warm tones of the mango wood top make this a unique coffee table. Dia14 x H22 in | Weight 18lbs Dia35 x H55 cm | Weight 8kgs Tabletop | Mangowood Legs "
+        },
+        {
+            id: `26`,
+            name: "White mini bear",
+            price: 350,
+            image: "https://i.pinimg.com/236x/c3/b0/5f/c3b05f3852437522cef1d457c6570e18.jpg",
+            detail: "Soft little white bear. With blush on her face and a little hair clip. Nicely dressed up. All sweet, elegant and cuddly. For all girly girls out there."
+        },
+        {
+            id: `27`,
+            name: "Brown bear",
+            price: 900,
+            image: "https://i.pinimg.com/564x/7d/e5/0b/7de50b6ff63f93afa5020183ff69fe50.jpg",
+            detail: "Soft and cuddly bworn bear. Just perfect size to decorate your room. Bring that aesthetic vitage feel."
+        },
+        {
+            id: `28`,
+            name: "Bunnies",
+            price: 600,
+            image: "https://i.pinimg.com/474x/9d/5a/b7/9d5ab72b9aa3f263928593c7a21fc63d.jpg",
+            detail: "Always comes in pair. Buy these cute little bunnies to brighten up ur day a little more. One in brownish shade with white bows and one in white shade with pink bows. Just perfect size to cuddle and sleep with."
+        },
+        {
+            id: `29`,
+            name: "Hello kitty plushie",
+            price: 1200,
+            image: "https://i.pinimg.com/236x/dc/c8/ca/dcc8ca26a0f3de1756062c9bbb190b89.jpg",
+            detail: "A cute little hello kitty plushie awaits to be in your room and be your friend. Comes with a cap and a huge pink bow and a pink neck-tie. Perfect for any room. "
+        },
+        {
+            id: `30`,
+            name: "Penguin friends",
+            price: 1500,
+            image: "https://i.pinimg.com/236x/23/10/a3/2310a3dbebede726866a12881e992af6.jpg",
+            detail: "These friends are so cute and are perfect for any room. Buy these cute little friends to brighten up ur day a little more. Just perfect size to cuddle and sleep with. Always together with each other and with you"
         },
     ]
 

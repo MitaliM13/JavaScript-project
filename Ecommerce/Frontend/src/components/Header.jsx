@@ -10,7 +10,8 @@ function Header() {
   };
 
   return (
-    <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-20 shadow-lg bg-green-600">
+    <>
+      <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 py-2 z-20 shadow-lg bg-green-600">
       <nav className="flex items-center justify-between w-full">
         {/* Logo */}
         <div className="bg-white flex items-center space-x-2 p-2 rounded-full">
@@ -22,6 +23,7 @@ function Header() {
         <ul className="hidden md:flex space-x-6 text-white text-xl">
           <li className="hover:text-green-200 cursor-pointer transition">Home</li>
           <li className="hover:text-green-200 cursor-pointer transition">Products</li>
+          <li className="hover:text-green-200 cursor-pointer transition">Shop now</li>
         </ul>
 
         {/* Action Buttons */}
@@ -91,6 +93,7 @@ function Header() {
         </div>
       )}
     </header>
+    </>
   );
 }
 
