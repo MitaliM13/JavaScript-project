@@ -7,13 +7,19 @@ function Products() {
   const [loading, setLoading] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cart, setCart] = useState([]);
+  const [search, setSearch] = useState('');
+  const [visibleProducts, setVisibleProducts] = useState(10);
 
   useEffect(() => {
+
+    const controller = new AbortController();
+
     (async () => {
       try {
         setLoading(true);
         setError(false);
-        const response = await axios.get('/api/products');
+        const response = await axios.get('/api/products?search=' + search, 
+          { signal: controller.signal });
         setData(response.data);
         console.log(response.data);
       } catch (error) {
@@ -24,15 +30,12 @@ function Products() {
       }
     })();
 
-    if(error) { 
-      console.log(error);
+    return () => {
+      controller.abort();
     }
 
-    if(loading) {
-      console.log(loading);
-    }
 
-  }, [error, loading]);
+  }, [search]);
 
   const handleViewDetails = (product) => {
     setSelectedProduct(product);
@@ -50,14 +53,35 @@ function Products() {
     setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
   };
 
+  const loadMoreProducts = () => {
+    setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 5);
+  };
+
   return (
-    <div className="bg-green-300 w-full min-h-screen flex justify-center py-10 px-4">
+    <div className="bg-green-300 w-full min-h-screen flex justify-center py-12 px-4">
       <div className="max-w-6xl w-full">
         <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8 drop-shadow-lg">
-          Our Top Products
+          Shop By Category
         </h1>
+
+      {/*Search Product*/}
+
+      <div className="flex items-center justify-center gap-2 mb-8">
+        <input 
+          type="text" 
+          placeholder="Search for the products..." 
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          className="w-1/3 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+        <button 
+          className='bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-2 rounded'
+        >
+          Search</button>
+      </div>
+
+        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {data.map((item) => (
+          {data.slice(0,visibleProducts).map((item) => (
             <div
               key={item.id}
               className="group relative bg-white rounded-lg shadow-lg overflow-hidden p-4 hover:shadow-xl transition duration-300 hover:scale-105"
@@ -84,6 +108,15 @@ function Products() {
           ))}
         </div>
 
+        {/* Load More Button */}
+        {visibleProducts < data.length && (
+          <button
+            className=" text-gray-500 font-semibold py-2 px-2 mt-5 rounded block mx-auto"
+            onClick={loadMoreProducts}
+          >
+            Load More..
+          </button>
+        )}
         {/* Product Details Modal */}
         {selectedProduct && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -115,6 +148,8 @@ function Products() {
             </div>
           </div>
         )}
+
+        
 
         {/* Cart Modal */}
         {cart.length > 0 && (

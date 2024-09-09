@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Products from './components/Products';
 import Special from './components/Special';
+import Footer from './components/Footer';
 
 function App() {
   
@@ -12,6 +13,7 @@ function App() {
         <Hero />
         <Special />
         <Products />
+        <Footer />
       </div>
   );
 }
