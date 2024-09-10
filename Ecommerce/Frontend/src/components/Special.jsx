@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import  { useRef } from 'react';
 import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle, IoIosArrowRoundForward } from "react-icons/io";
 import { MdOutlineShoppingBag } from "react-icons/md";
@@ -25,44 +26,48 @@ function Special() {
   ];
 
   return (
-    <div className='w-full h-auto bg-white py-10'>
+    <div className='w-full h-auto bg-white py-10 mt-14'>
       {/* <h1 className='text-4xl font-bold text-center mb-12'></h1> */}
 
       <div className='relative flex items-center'>
         {/* Left Arrow */}
         <button
-          className='absolute left-0 z-10 p-2 text-gray-500 hover:text-gray-900'
+          className='absolute left-0 z-10 p-2   text-green-600 hover:text-gray-900 transition-color duration-300'
           onClick={() => scroll('left')}
-          style={{ marginLeft: '20px' }} // Push the button to the side
+          style={{ marginLeft: '10px' }} // Push the button to the side
         >
           <IoMdArrowDropleftCircle size={50} />
         </button>
 
         {/* Scrollable container */}
         <div
-          className='flex overflow-x-auto space-x-6 px-16 md:px-24 scrollbar-hide touch-pan-x snap-x snap-mandatory'
+          className='flex overflow-x-auto mx-20  space-x-6 px-16 md:px-24 scrollbar-hide touch-pan-x snap-x snap-mandatory'
           ref={scrollRef}
-          style={{ padding: '0 80px' }} // Padding to create space for the buttons
+          style={{ padding: '0 40px' }} // Padding to create space for the buttons
         >
-          {categories.map((category, index) => (
-            <div
-              key={index}
-              className='min-w-[200px] flex flex-col  items-center mx-6 my-2 bg-gray-100 p-6 rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-300'
-            >
-              <img
-                src={category.img}
-                alt={category.name}
-                className='w-32 h-32 object-cover mb-4 overflow-hidden rounded-full'
-              />
-              <h2 className='text-xl font-semibold'>{category.name}</h2>
-              <p className='text-gray-600 font-thin text-xs'>View Collection <IoIosArrowRoundForward size={20} style={{ marginLeft: '20px' }} /></p>
-            </div>
-          ))}
+{categories.map((category, index) => (
+  <div
+    key={index}
+    className="min-w-[200px] flex flex-col items-center mx-3 my-2 bg-gray-100 p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+  >
+    <img
+      src={category.img}
+      alt={category.name}
+      className="w-32 h-32 object-cover mb-4 rounded-full shadow-md"
+    />
+    <h2 className="text-xl font-semibold text-gray-800 mb-2">{category.name}</h2>
+    <button className="bg-green-600 py-2 px-2 rounded-full text-white font-medium text-sm hover:bg-green-700 hover:scale-105 transition-all duration-300 flex items-center">
+      View Collection 
+      <IoIosArrowRoundForward size={20} className="ml-1" />
+    </button>
+  </div>
+))}
+
         </div>
 
         {/* Right Arrow */}
         <button
-          className='absolute right-0 z-10 p-2 text-gray-500 hover:text-gray-900'
+          className='absolute right-0 z-10 p-2 text-green-600 hover:text-gray-900 transition-color duration-300'
           onClick={() => scroll('right')}
           style={{ marginRight: '20px' }} // Push the button to the side
         >

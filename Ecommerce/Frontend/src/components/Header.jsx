@@ -1,14 +1,17 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../image/online-shopping.png';
 import cart from '../image/shopping-cart.png';
-
+// import CartContext from '../context/CartContext';
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isRegisterMode, setIsRegisterMode] = useState(false);
-  const [formData, setFormData] = useState({ username: '',email: '' , password: '' });
+  const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const [passwordError, setPasswordError] = useState('');
   const [isPasswordValid, setIsPasswordValid] = useState(true);
+
+  // const { cartProduct } = useContext(CartContext);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -74,10 +77,31 @@ function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex space-x-6 text-white text-xl">
-            <li className="hover:text-green-200 cursor-pointer transition">Home</li>
-            <li className="hover:text-green-200 cursor-pointer transition">Products</li>
-            <li className="hover:text-green-200 cursor-pointer transition">Shop now</li>
+          <ul className="hidden md:flex space-x-6 text-xl">
+            <NavLink
+              to="/hero"
+              className={({ isActive }) =>
+                `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
+              }
+            >
+              <li>Home</li>
+            </NavLink>
+            <NavLink
+              to="/special"
+              className={({ isActive }) =>
+                `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
+              }
+            >
+              <li>Our Speciality</li>
+            </NavLink>
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
+              }
+            >
+              <li>Shop now</li>
+            </NavLink>
           </ul>
 
           {/* Action Buttons */}
@@ -133,10 +157,30 @@ function Header() {
                 </svg>
               </button>
               <ul className="space-y-4 text-gray-800">
-                <li className="hover:text-green-600 cursor-pointer transition">Home</li>
-                <li className="hover:text-green-600 cursor-pointer transition">Products</li>
-                <li className="hover:text-green-600 cursor-pointer transition">Contact</li>
-                <li className="hover:text-green-600 cursor-pointer transition">About</li>
+                <NavLink
+                  to="/hero"
+                  className={({ isActive }) =>
+                    `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
+                  }
+                >
+                  <li>Home</li>
+                </NavLink>
+                <NavLink
+                  to="/special"
+                  className={({ isActive }) =>
+                    `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
+                  }
+                >
+                  <li>Our Speciality</li>
+                </NavLink>
+                <NavLink
+                  to="/products"
+                  className={({ isActive }) =>
+                    `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
+                  }
+                >
+                  <li>Shop now</li>
+                </NavLink>
               </ul>
               <div className="flex items-center space-x-4">
                 <button className="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 transition">
@@ -156,8 +200,24 @@ function Header() {
         {/* Login/Register Modal */}
         {isLoginModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-80">
-              <h3 className="text-xl text-center  font-semibold mb-4">
+            <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative">
+              {/* Close Button */}
+              <button
+                onClick={toggleLoginModal}
+                className="absolute top-2 right-2 text-gray-600 hover:text-red-600 focus:outline-none"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <h3 className="text-xl text-center font-semibold mb-4">
                 {isRegisterMode ? 'Register' : 'Login'}
               </h3>
               <form onSubmit={handleFormSubmit}>
@@ -168,19 +228,23 @@ function Header() {
                   value={formData.username}
                   onChange={handleInputChange}
                   placeholder="Enter Username"
-                  className="w-full mb-4 p-2 border rounded"
                   required
+                  className="w-full p-2 border rounded mb-3"
                 />
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Enter Email"
-                  className="w-full mb-4 p-2 border rounded"
-                  required
-                />
+                {isRegisterMode && (
+                  <>
+                    <label htmlFor="email">Email:</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Enter Email"
+                      required
+                      className="w-full p-2 border rounded mb-3"
+                    />
+                  </>
+                )}
                 <label htmlFor="password">Password:</label>
                 <input
                   type="password"
@@ -188,30 +252,32 @@ function Header() {
                   value={formData.password}
                   onChange={handleInputChange}
                   placeholder="Enter Password"
-                  className={`w-full mb-2 p-2 border rounded ${
-                    !isPasswordValid ? 'border-red-500' : ''
-                  }`}
                   required
+                  className={`w-full p-2 border rounded ${
+                    !isPasswordValid ? 'border-red-500' : ''
+                  } mb-3`}
                 />
-                {passwordError && (
-                  <p className="text-red-500 text-sm mb-4">{passwordError}</p>
-                )}
+                {passwordError && <p className="text-red-500">{passwordError}</p>}
                 <button
                   type="submit"
-                  className="w-full py-2 bg-green-500 text-white rounded hover:bg-green-600 transition"
-                  disabled={!isPasswordValid}
+                  className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition"
                 >
                   {isRegisterMode ? 'Register' : 'Login'}
                 </button>
-                <p
-                  onClick={() => setIsRegisterMode(!isRegisterMode)}
-                  className="text-green-600 mt-4 cursor-pointer hover:underline"
-                >
-                  {isRegisterMode
-                    ? 'Already have an account? Login'
-                    : 'Don’t have an account? Register'}
-                </p>
               </form>
+              <div className="flex justify-between mt-4 text-sm">
+                <span>
+                  {isRegisterMode
+                    ? 'Already have an account?'
+                    : 'Don’t have an account?'}
+                </span>
+                <button
+                  onClick={() => setIsRegisterMode(!isRegisterMode)}
+                  className="text-green-500 hover:underline"
+                >
+                  {isRegisterMode ? 'Login' : 'Register'}
+                </button>
+              </div>
             </div>
           </div>
         )}

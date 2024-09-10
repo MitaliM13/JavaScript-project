@@ -223,7 +223,7 @@ app.get("/api/products", (req, res) => {
         return
     }
 
-    setTimeout(() => res.json(products), 2000);
+    setTimeout(() => res.json(products), 1000);
 
 })
 

@@ -1,4 +1,5 @@
 import bgImage from '../image/Background.png';
+import { NavLink } from 'react-router-dom';
 
 function Hero() {
   return (
@@ -10,9 +11,11 @@ function Hero() {
         </h1>
         
         {/* Just the Link component, no need to wrap it in Router */}
+          <NavLink to="/products">
           <button className="px-6 py-3 bg-white text-green-600 font-semibold rounded-full shadow-md hover:bg-green-600 hover:text-white transition transform hover:scale-105 focus:outline-none">
             Shop Now
           </button>
+          </NavLink>
       </div>
 
       {/* Image Positioned on the Right */}
