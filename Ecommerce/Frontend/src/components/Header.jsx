@@ -92,7 +92,7 @@ function Header() {
                 `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
               }
             >
-              <li>Our Speciality</li>
+              <li>Collections</li>
             </NavLink>
             <NavLink
               to="/products"
@@ -101,6 +101,14 @@ function Header() {
               }
             >
               <li>Shop now</li>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
+              }
+            >
+              <li>Contact Us</li>
             </NavLink>
           </ul>
 
@@ -171,7 +179,7 @@ function Header() {
                     `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
                   }
                 >
-                  <li>Our Speciality</li>
+                  <li>Collections</li>
                 </NavLink>
                 <NavLink
                   to="/products"
@@ -180,6 +188,14 @@ function Header() {
                   }
                 >
                   <li>Shop now</li>
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
+                  }
+                >
+                  <li>Contat Us</li>
                 </NavLink>
               </ul>
               <div className="flex items-center space-x-4">
