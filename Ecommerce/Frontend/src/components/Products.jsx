@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 function Products() {
   const [data, setData] = useState([]);
@@ -175,6 +176,7 @@ function Products() {
 )}
 
         {/* Cart Modal */}
+        
         
       </div>
     </div>

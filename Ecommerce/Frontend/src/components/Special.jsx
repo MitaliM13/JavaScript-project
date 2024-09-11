@@ -56,10 +56,7 @@ function Special() {
         className="w-32 h-32 object-cover mb-4 rounded-full shadow-md"
       />
       <h2 className="text-xl font-semibold text-gray-800 mb-2">{category.name}</h2>
-      <button className="bg-green-600 py-2 px-2 rounded-full text-white font-medium text-sm hover:bg-green-700 hover:scale-105 transition-all duration-300 flex items-center">
-        View Collection 
-      <IoIosArrowRoundForward size={20} className="ml-1" />
-      </button>
+      
       </div>
     ))}
 

@@ -1,4 +1,3 @@
-import bgImage from '../image/Background.png';
 import { NavLink } from 'react-router-dom';
 
 function Hero() {
