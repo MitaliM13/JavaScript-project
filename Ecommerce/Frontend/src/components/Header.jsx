@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../image/online-shopping.png';
-import cart from '../image/shopping-cart.png';
+import cartLogo from '../image/shopping-cart.png';
+
+
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -9,7 +11,7 @@ function Header() {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const [passwordError, setPasswordError] = useState('');
   const [isPasswordValid, setIsPasswordValid] = useState(true);
-
+  const [cartItems, setCartItems] = useState([]);
   
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -112,9 +114,10 @@ function Header() {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="px-4 py-2 text-white rounded hover:bg-green-600 transition">
-              <img className="w-7 h-7" src={cart} alt="cart" />
-            </button>
+          <button className="px-5 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transition duration-200 ease-in-out transform hover:scale-105 flex flex-row items-center justify-between gap-2">
+            <img className="w-7 h-7" src={cart} alt="cart" />
+            <span className="text-sm font-semibold">{cartItems.length}</span>
+          </button>
             <button
               onClick={toggleLoginModal}
               className="px-4 py-2 border-2 border-white text-white rounded hover:bg-white hover:text-green-600 transition"
@@ -198,7 +201,7 @@ function Header() {
               </ul>
               <div className="flex items-center space-x-4">
                 <button className="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 transition">
-                  <img className="w-7 h-7" src={cart} alt="cart" />
+                  <img className="w-7 h-7" src={cartLogo} alt="cart" />
                 </button>
                 <button
                   onClick={toggleLoginModal}

@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { useState } from 'react'
 import Layout from './Layout.jsx'
 import Hero from './components/Hero.jsx'
 import Special from './components/Special.jsx'
@@ -34,7 +35,10 @@ const router = createBrowserRouter([
   },
 ])
 
+
 const App = () => {
+
+
   return <RouterProvider router={router} />
 }
 

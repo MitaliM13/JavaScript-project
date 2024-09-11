@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import CartReducer from '../context/CartReducer';
 function Products() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
@@ -11,6 +12,7 @@ function Products() {
   const [search, setSearch] = useState('');
   const [showFullImage, setShowFullImage] = useState(false);
   const [visibleProducts, setVisibleProducts] = useState(10);
+  const { dispatch } = useContext(CartReducer);
 
   useEffect(() => {
 
@@ -143,7 +145,7 @@ function Products() {
           <div className="flex justify-center lg:justify-start space-x-2 mt-4">
             <button
               className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105"
-              onClick={() => addToCart(selectedProduct)}
+              onClick={() => dispatch({ type: "Add", product: selectedProduct })}
             >
               Add to Cart
             </button>

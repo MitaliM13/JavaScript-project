@@ -3,7 +3,7 @@ import  { useRef } from 'react';
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { RiCustomerService2Fill } from "react-icons/ri";
-import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle, IoIosArrowRoundForward } from "react-icons/io";
+import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/io";
 function Special() {
   const scrollRef = useRef(null);
 
@@ -64,7 +64,7 @@ function Special() {
       <button
         className='absolute right-0 z-10 p-2 text-green-600 hover:text-gray-900 transition-color duration-300'
         onClick={() => scroll('right')}
-        style={{ marginRight: '20px' }} // Push the button to the side
+        style={{ marginRight: '20px' }} 
       >
         <IoMdArrowDroprightCircle size={50} />
       </button>
