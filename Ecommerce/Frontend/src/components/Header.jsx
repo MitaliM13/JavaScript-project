@@ -1,8 +1,6 @@
 import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../image/online-shopping.png';
 import cartLogo from '../image/shopping-cart.png';
-
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -68,20 +66,19 @@ function Header() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 py-2 z-20 shadow-lg bg-green-600">
+      <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 py-2 z-20 shadow-lg bg-transparent">
         <nav className="flex items-center justify-between w-full">
           {/* Logo */}
-          <div className="bg-white flex items-center space-x-2 p-2 rounded-full">
-            <img className="w-9 h-9" src={logo} alt="Logo" />
-            <h1 className="font-serif text-xl text-green-600">NovaCart</h1>
-          </div>
+          <div className="flex items-center space-x-3 p-3 rounded-full  hover:shadow-xl transition-shadow duration-200">
+          <h1 className="font-serif font-bold text-2xl text-black">NovaCart</h1>
+        </div>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-6 text-xl">
             <NavLink
               to="/hero"
               className={({ isActive }) =>
-                `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
+                `hover:text-black ${isActive ? 'text-gray-700 font-semibold' : ' text-gray-600'} cursor-pointer transition`
               }
             >
               <li>Home</li>
@@ -89,7 +86,7 @@ function Header() {
             <NavLink
               to="/special"
               className={({ isActive }) =>
-                `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
+                `hover:text-black ${isActive ? 'font-semibold ' : ' text-gray-600'} cursor-pointer transition`
               }
             >
               <li>Collections</li>
@@ -97,7 +94,7 @@ function Header() {
             <NavLink
               to="/products"
               className={({ isActive }) =>
-                `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
+                `hover:text-black ${isActive ? 'text-gray-700 font-semibold' : ' text-gray-600'} cursor-pointer transition`
               }
             >
               <li>Shop now</li>
@@ -105,7 +102,7 @@ function Header() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `hover:text-green-200 ${isActive ? 'text-white' : ' text-black'} cursor-pointer transition`
+                `hover:text-black ${isActive ? 'text-gray-700 font-semibold' : ' text-gray-600'} cursor-pointer transition`
               }
             >
               <li>Contact Us</li>
@@ -114,13 +111,13 @@ function Header() {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-          <button className="px-5 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transition duration-200 ease-in-out transform hover:scale-105 flex flex-row items-center justify-between gap-2">
-            <img className="w-7 h-7" src={cart} alt="cart" />
+          <button className="px-5 py-2 rounded-lg shadow-md hover:bg-green-600 transition duration-200 ease-in-out transform hover:scale-105 flex flex-row items-center justify-between gap-2">
+            <img className="w-7 h-7" src={cartLogo} alt="cart" />
             <span className="text-sm font-semibold">{cartItems.length}</span>
           </button>
             <button
               onClick={toggleLoginModal}
-              className="px-4 py-2 border-2 border-white text-white rounded hover:bg-white hover:text-green-600 transition"
+              className="px-4 py-2 border-2 shadow- rounded hover:bg- hover:text-green-600 transition"
             >
               {isRegisterMode ? 'Register' : 'Login'}
             </button>

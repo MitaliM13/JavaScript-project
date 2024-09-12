@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 function Hero() {
   return (
-    <div className="bg-gray-200 w-full h-screen flex items-center justify-between relative overflow-hidden px-16">
+    <div className=" w-full h-screen bg-gradient-to-b from-pink-50 via-purple-50 to-indigo-50 flex items-center justify-between relative overflow-hidden px-16">
 
       <div className="flex flex-col z-10 max-w-xl">
         <h1 className="text-4xl md:text-5xl font-semibold text-green-600 leading-tight drop-shadow-lg mb-6">
@@ -18,7 +18,7 @@ function Hero() {
       <img
         src='https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?auto=compress&cs=tinysrgb&w=400'
         alt="Hero"
-        className="absolute right-0  p-4 w-2/3 h-full object-contain "
+        className="absolute right-0  p-4 w-2/3 h-2/3 object-contain "
       />
 
     </div>

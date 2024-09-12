@@ -1,12 +1,9 @@
-import React from 'react';
-
 const Contact = () => {
   return (
-    <div className="relative bg-gradient-to-b from-pink-50 via-purple-50 to-indigo-50 min-h-screen mt-12 py-16 px-6 md:px-12">
-      {/* Background Image with Opacity */}
-      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3758055/pexels-photo-3758055.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover bg-center opacity-20"></div>
+    <div className="relative bg-gradient-to-b from-pink-50 via-purple-50 to-indigo-50 min-h-screen py-20 px-6 md:px-12">
 
-      {/* Slogan Section */}
+      <div className="absolute inset-0 bg-[url('')] bg-cover bg-center opacity-20"></div>
+
       <div className="relative text-center mb-16">
         <h1 className="text-5xl font-extrabold text-gray-900 mb-4">
           Connect With Us – We’re Here for You!

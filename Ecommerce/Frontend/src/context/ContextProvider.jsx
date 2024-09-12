@@ -15,4 +15,5 @@ const ContextProvider = ({ children }) => {
   );
 };
 
+// Export them individually
 export { CartContext, ContextProvider };
