@@ -9,9 +9,8 @@ function Products() {
   const [loading, setLoading] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [search, setSearch] = useState('');
-  const [showFullImage, setShowFullImage] = useState(false);
   const [visibleProducts, setVisibleProducts] = useState(5);
-  const { dispatch } = useContext(CartContext); // Access `dispatch` from CartContext
+  const { dispatch } = useContext(CartContext);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -45,9 +44,11 @@ function Products() {
   };
 
   return (
-    <div className="bg-gray-200 w-full min-h-screen flex justify-center  py-20 px-4">
+    <div className="bg-background w-full min-h-screen flex justify-center py-20 px-4">
       <div className="max-w-6xl w-full">
-        <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8 drop-shadow-lg">Shop By Category</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-heading-primary text-center mb-8 drop-shadow-lg">
+          Shop By Category
+        </h1>
 
         {/* Search Product */}
         <div className="flex items-center justify-center gap-2 mb-8">
@@ -56,7 +57,7 @@ function Products() {
             placeholder="Search for the products..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-1/3 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-1/3 p-2 border border-card-border rounded-md focus:outline-none focus:ring-2 focus:ring-highlight-text"
           />
         </div>
 
@@ -65,20 +66,20 @@ function Products() {
           {data.slice(0, visibleProducts).map((item) => (
             <div
               key={item.id}
-              className="group relative bg-white rounded-lg shadow-lg overflow-hidden p-4 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group relative bg-card-bg rounded-lg shadow-card-shadow overflow-hidden p-4 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <img className="w-full h-40 object-cover rounded-md" src={item.image} alt={item.name} />
               <h2 className="text-lg font-semibold text-gray-800 mt-3">{item.name}</h2>
-              <p className="text-green-500 text-md font-medium mt-1">Rs: {item.price}</p>
+              <p className="text-button-bg text-md font-medium mt-1">Rs: {item.price}</p>
 
               <button
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-button-bg hover:bg-hover-link text-button-text font-semibold py-2 px-4 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => handleViewDetails(item)}
               >
                 View Details
               </button>
               <button
-                className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-active-link hover:bg-hover-link text-button-text font-semibold py-2 px-4 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => dispatch({ type: 'Add', product: item })}
               >
                 Add to Cart
@@ -99,18 +100,24 @@ function Products() {
 
         {/* Product Details Modal */}
         {selectedProduct && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-            <div className="relative bg-white shadow-lg p-6 rounded-lg w-[90%] max-w-4xl max-h-[90%] overflow-y-auto">
+          <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center transition-opacity duration-300">
+            <div className="relative bg-card-bg shadow-lg p-6 rounded-lg w-[90%] max-w-4xl max-h-[90%] overflow-y-auto transition-transform duration-300">
+              <button
+                className="absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-800"
+                onClick={handleCloseDetails}
+              >
+                &times;
+              </button>
               <div className="flex flex-col lg:flex-row items-center lg:items-start">
                 <div className="lg:w-1/2 w-full flex justify-center lg:justify-start mb-6 lg:mb-0">
                   <img className="w-full lg:w-[400px] object-cover rounded-md mb-4" src={selectedProduct.image} alt={selectedProduct.name} />
                 </div>
                 <div className="lg:w-1/2 w-full lg:pl-6 text-center lg:text-left">
-                  <h2 className="text-2xl font-semibold text-gray-800 mb-2">{selectedProduct.name}</h2>
+                  <h2 className="text-2xl font-semibold text-heading-primary mb-2">{selectedProduct.name}</h2>
                   <p className="text-gray-700 mb-4">{selectedProduct.detail}</p>
-                  <p className="text-green-500 text-xl font-medium">Price: Rs {selectedProduct.price}</p>
+                  <p className="text-button-bg text-xl font-medium">Price: Rs {selectedProduct.price}</p>
                   <button
-                    className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105"
+                    className="bg-button-bg hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105"
                     onClick={handleCloseDetails}
                   >
                     Close
@@ -118,6 +125,13 @@ function Products() {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Error Message */}
+        {error && (
+          <div className="text-red-500 text-center font-semibold mt-4">
+            <p>Oops! Something went wrong while fetching the products.</p>
           </div>
         )}
       </div>

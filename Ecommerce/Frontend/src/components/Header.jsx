@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import cartLogo from '../image/shopping-cart.png';
 
@@ -10,7 +10,7 @@ function Header() {
   const [passwordError, setPasswordError] = useState('');
   const [isPasswordValid, setIsPasswordValid] = useState(true);
   const [cartItems, setCartItems] = useState([]);
-  
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -66,19 +66,19 @@ function Header() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 py-2 z-20 shadow-lg bg-transparent">
+      <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 h-[55px] py-2 z-20 shadow-lg bg-header">
         <nav className="flex items-center justify-between w-full">
           {/* Logo */}
-          <div className="flex items-center space-x-3 p-3 rounded-full  hover:shadow-xl transition-shadow duration-200">
-          <h1 className="font-serif font-bold text-2xl text-black">NovaCart</h1>
-        </div>
+          <div className="flex items-center space-x-3 p-3 rounded-full hover:shadow-xl transition-shadow duration-200">
+            <h1 className="font-serif font-bold text-2xl text-active-link">NovaCart</h1>
+          </div>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-6 text-xl">
             <NavLink
               to="/hero"
               className={({ isActive }) =>
-                `hover:text-black ${isActive ? 'text-gray-700 font-semibold' : ' text-gray-600'} cursor-pointer transition`
+                `hover:text-hover-link ${isActive ? 'text-active-link font-bold' : ' text-nav-text'} cursor-pointer transition`
               }
             >
               <li>Home</li>
@@ -86,7 +86,7 @@ function Header() {
             <NavLink
               to="/special"
               className={({ isActive }) =>
-                `hover:text-black ${isActive ? 'font-semibold ' : ' text-gray-600'} cursor-pointer transition`
+                `hover:text-hover-link ${isActive ? 'text-active-link font-bold' : ' text-nav-text'} cursor-pointer transition`
               }
             >
               <li>Collections</li>
@@ -94,7 +94,7 @@ function Header() {
             <NavLink
               to="/products"
               className={({ isActive }) =>
-                `hover:text-black ${isActive ? 'text-gray-700 font-semibold' : ' text-gray-600'} cursor-pointer transition`
+                `hover:text-hover-link ${isActive ? 'text-active-link font-bold' : ' text-nav-text'} cursor-pointer transition`
               }
             >
               <li>Shop now</li>
@@ -102,7 +102,7 @@ function Header() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `hover:text-black ${isActive ? 'text-gray-700 font-semibold' : ' text-gray-600'} cursor-pointer transition`
+                `hover:text-hover-link ${isActive ? 'text-active-link font-bold' : ' text-nav-text'} cursor-pointer transition`
               }
             >
               <li>Contact Us</li>
@@ -111,13 +111,13 @@ function Header() {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-          <button className="px-5 py-2 rounded-lg shadow-md hover:bg-green-600 transition duration-200 ease-in-out transform hover:scale-105 flex flex-row items-center justify-between gap-2">
-            <img className="w-7 h-7" src={cartLogo} alt="cart" />
-            <span className="text-sm font-semibold">{cartItems.length}</span>
-          </button>
+            <button className="px-2 py-2 rounded-lg shadow-md text-button-text bg-button-bg hover:bg-header transition duration-200 ease-in-out transform hover:scale-105 flex flex-row items-center justify-between gap-2">
+              <img className="w-5 h-5" src={cartLogo} alt="cart" />
+              <span className="text-sm font-semibold">{cartItems.length}</span>
+            </button>
             <button
               onClick={toggleLoginModal}
-              className="px-4 py-2 border-2 shadow- rounded hover:bg- hover:text-green-600 transition"
+              className="px-2 py-2 rounded-lg text-button-text text-sm bg-button-bg hover:bg-header transition"
             >
               {isRegisterMode ? 'Register' : 'Login'}
             </button>
@@ -126,7 +126,7 @@ function Header() {
           {/* Mobile Navigation Toggle */}
           <div className="flex md:hidden">
             <button
-              className="text-gray-600 hover:text-purple-600 focus:outline-none"
+              className="text-gray-600 hover:text-active-link focus:outline-none"
               onClick={toggleMobileMenu}
             >
               <svg
@@ -146,9 +146,9 @@ function Header() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-end">
-            <div className="w-64 bg-white shadow-lg flex flex-col p-4 space-y-4">
+            <div className="w-64 bg-header text-nav-text shadow-lg flex flex-col p-4 space-y-4">
               <button
-                className="self-end text-gray-600 hover:text-green-600 focus:outline-none"
+                className="self-end text-nav-text hover:text-active-link focus:outline-none"
                 onClick={toggleMobileMenu}
               >
                 <svg
@@ -162,11 +162,11 @@ function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <ul className="space-y-4 text-gray-800">
+              <ul className="space-y-4">
                 <NavLink
                   to="/hero"
                   className={({ isActive }) =>
-                    `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
+                    `block px-4 py-2 rounded-lg ${isActive ? 'text-active-link' : 'text-nav-text'} hover:bg-nav-text hover:text-header transition`
                   }
                 >
                   <li>Home</li>
@@ -174,7 +174,7 @@ function Header() {
                 <NavLink
                   to="/special"
                   className={({ isActive }) =>
-                    `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
+                    `block px-4 py-2 rounded-lg ${isActive ? 'text-active-link' : 'text-nav-text'} hover:bg-nav-text hover:text-header transition`
                   }
                 >
                   <li>Collections</li>
@@ -182,7 +182,7 @@ function Header() {
                 <NavLink
                   to="/products"
                   className={({ isActive }) =>
-                    `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
+                    `block px-4 py-2 rounded-lg ${isActive ? 'text-active-link' : 'text-nav-text'} hover:bg-nav-text hover:text-header transition`
                   }
                 >
                   <li>Shop now</li>
@@ -190,19 +190,20 @@ function Header() {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    `hover:text-green-700 ${isActive ? 'text-green-400' : ' text-black'} cursor-pointer transition`
+                    `block px-4 py-2 rounded-lg ${isActive ? 'text-active-link' : 'text-nav-text'} hover:bg-nav-text hover:text-header transition`
                   }
                 >
-                  <li>Contat Us</li>
+                  <li>Contact Us</li>
                 </NavLink>
               </ul>
-              <div className="flex items-center space-x-4">
-                <button className="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600 transition">
-                  <img className="w-7 h-7" src={cartLogo} alt="cart" />
+              <div className="flex flex-col space-y-2 gap-1">
+                <button className="w-1/2 px-4 py-2 text-button-text bg-button-bg text-sm rounded hover:bg-header transition flex items-center justify-evenly">
+                  <img className="w-6 h-6" src={cartLogo} alt="cart" />
+                  <span className="text-sm font-semibold">{cartItems.length}</span>
                 </button>
                 <button
                   onClick={toggleLoginModal}
-                  className="px-4 py-2 border-2 border-green-500 text-green-600 rounded hover:bg-green-500 hover:text-white transition"
+                  className="w-1/2 px-4 py-2 border-2 border-button-bg text-button-text rounded hover:bg-button-bg hover:text-header transition"
                 >
                   {isRegisterMode ? 'Register' : 'Login'}
                 </button>
@@ -213,88 +214,80 @@ function Header() {
 
         {/* Login/Register Modal */}
         {isLoginModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative">
-              {/* Close Button */}
-              <button
-                onClick={toggleLoginModal}
-                className="absolute top-2 right-2 text-gray-600 hover:text-red-600 focus:outline-none"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <h3 className="text-xl text-center font-semibold mb-4">
-                {isRegisterMode ? 'Register' : 'Login'}
-              </h3>
-              <form onSubmit={handleFormSubmit}>
-                <label htmlFor="username">Name:</label>
-                <input
-                  type="text"
-                  name="username"
-                  value={formData.username}
-                  onChange={handleInputChange}
-                  placeholder="Enter Username"
-                  required
-                  className="w-full p-2 border rounded mb-3"
-                />
-                {isRegisterMode && (
-                  <>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Enter Email"
-                      required
-                      className="w-full p-2 border rounded mb-3"
-                    />
-                  </>
-                )}
-                <label htmlFor="password">Password:</label>
-                <input
-                  type="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                  placeholder="Enter Password"
-                  required
-                  className={`w-full p-2 border rounded ${
-                    !isPasswordValid ? 'border-red-500' : ''
-                  } mb-3`}
-                />
-                {passwordError && <p className="text-red-500">{passwordError}</p>}
-                <button
-                  type="submit"
-                  className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition"
-                >
-                  {isRegisterMode ? 'Register' : 'Login'}
-                </button>
-              </form>
-              <div className="flex justify-between mt-4 text-sm">
-                <span>
-                  {isRegisterMode
-                    ? 'Already have an account?'
-                    : 'Don’t have an account?'}
-                </span>
-                <button
-                  onClick={() => setIsRegisterMode(!isRegisterMode)}
-                  className="text-green-500 hover:underline"
-                >
-                  {isRegisterMode ? 'Login' : 'Register'}
-                </button>
-              </div>
-            </div>
-          </div>
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="relative bg-white p-6 rounded-lg bg-active-link shadow-lg w-80">
+      <button
+        onClick={toggleLoginModal}
+        className="absolute top-2 right-2 text-gray-600 hover:text-active-link"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <h2 className="text-lg font-semibold mb-4">
+        {isRegisterMode ? 'Register' : 'Login'}
+      </h2>
+      <form onSubmit={handleFormSubmit} className="space-y-4">
+        <input
+          type="text"
+          name="username"
+          value={formData.username}
+          onChange={handleInputChange}
+          placeholder="Username"
+          className="w-full p-2 border border-gray-300 rounded"
+          required
+        />
+        {isRegisterMode && (
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            placeholder="Email"
+            className="w-full p-2 border border-gray-300 rounded"
+            required
+          />
         )}
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleInputChange}
+          placeholder="Password"
+          className="w-full p-2 border border-gray-300 rounded"
+          required
+        />
+        {passwordError && !isPasswordValid && (
+          <p className="text-red-500 text-sm">{passwordError}</p>
+        )}
+        <button
+          type="submit"
+          className="w-full py-2 bg-button-bg text-button-text rounded hover:bg-header transition"
+        >
+          {isRegisterMode ? 'Register' : 'Login'}
+        </button>
+        <p className="text-sm text-center">
+          {isRegisterMode ? 'Already have an account?' : 'Don\'t have an account?'}{' '}
+          <button
+            type="button"
+            onClick={() => setIsRegisterMode(!isRegisterMode)}
+            className="text-header font-semibold"
+          >
+            {isRegisterMode ? 'Login' : 'Register'}
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+)}
+
       </header>
     </>
   );

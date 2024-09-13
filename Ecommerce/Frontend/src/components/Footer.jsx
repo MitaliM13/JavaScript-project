@@ -2,42 +2,42 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10">
+    <footer className="bg-header text-button-text py-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-5">
         {/* About Section */}
         <div className="flex flex-col">
-          <h2 className="text-lg font-semibold mb-4">About Us</h2>
-          <p className="text-sm text-gray-400">
+          <h2 className="text-lg font-semibold mb-4 text-highlight-text">About Us</h2>
+          <p className="text-sm text-gray-300">
             We offer the best products at unbeatable prices. Shop with us for a delightful and hassle-free experience. We ensure the quality and authenticity of every item.
           </p>
         </div>
 
         {/* Links Section */}
         <div className="flex flex-col">
-          <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
-          <ul className="text-sm text-gray-400 space-y-2">
+          <h2 className="text-lg font-semibold mb-4 text-highlight-text">Quick Links</h2>
+          <ul className="text-sm text-gray-300 space-y-2">
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">
+              <a href="#" className="hover:text-active-link transition-colors">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">
+              <a href="#" className="hover:text-active-link transition-colors">
                 Shop
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">
+              <a href="#" className="hover:text-active-link transition-colors">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">
+              <a href="#" className="hover:text-active-link transition-colors">
                 Contact Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400 transition-colors">
+              <a href="#" className="hover:text-active-link transition-colors">
                 FAQ
               </a>
             </li>
@@ -46,46 +46,46 @@ const Footer = () => {
 
         {/* Contact Section */}
         <div className="flex flex-col">
-          <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
-          <p className="text-sm text-gray-400">123 E-commerce St, Shop City, SC 12345</p>
-          <p className="text-sm text-gray-400">Phone: +1 234 567 890</p>
-          <p className="text-sm text-gray-400">Email: support@ecommerce.com</p>
+          <h2 className="text-lg font-semibold mb-4 text-highlight-text">Contact Us</h2>
+          <p className="text-sm text-gray-300">123 E-commerce St, Shop City, SC 12345</p>
+          <p className="text-sm text-gray-300">Phone: +1 234 567 890</p>
+          <p className="text-sm text-gray-300">Email: support@ecommerce.com</p>
         </div>
 
         {/* Social Media Section */}
         <div className="flex flex-col">
-          <h2 className="text-lg font-semibold mb-4">Follow Us</h2>
+          <h2 className="text-lg font-semibold mb-4 text-highlight-text">Follow Us</h2>
           <div className="flex space-x-4">
             <a
               href="#"
-              className="bg-gray-800 p-2 rounded-full hover:bg-green-500 transition-colors"
+              className="bg-gray-800 p-2 rounded-full hover:bg-button-bg transition-colors"
             >
-              <FaFacebookF className="text-xl" />
+              <FaFacebookF className="text-xl text-button-text" />
             </a>
             <a
               href="#"
-              className="bg-gray-800 p-2 rounded-full hover:bg-green-500 transition-colors"
+              className="bg-gray-800 p-2 rounded-full hover:bg-button-bg transition-colors"
             >
-              <FaTwitter className="text-xl" />
+              <FaTwitter className="text-xl text-button-text" />
             </a>
             <a
               href="#"
-              className="bg-gray-800 p-2 rounded-full hover:bg-green-500 transition-colors"
+              className="bg-gray-800 p-2 rounded-full hover:bg-button-bg transition-colors"
             >
-              <FaInstagram className="text-xl" />
+              <FaInstagram className="text-xl text-button-text" />
             </a>
             <a
               href="#"
-              className="bg-gray-800 p-2 rounded-full hover:bg-green-500 transition-colors"
+              className="bg-gray-800 p-2 rounded-full hover:bg-button-bg transition-colors"
             >
-              <FaLinkedinIn className="text-xl" />
+              <FaLinkedinIn className="text-xl text-button-text" />
             </a>
           </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-gray-700 mt-8 pt-5 text-center text-sm text-gray-500">
+      <div className="border-t border-gray-700 mt-8 pt-5 text-center text-sm text-gray-400">
         <p>© 2024 E-commerce Site. All rights reserved.</p>
       </div>
     </footer>
