@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Cart from './Cart';
 import cartLogo from '../image/shopping-cart.png';
 
 function Header() {
@@ -111,17 +112,20 @@ function Header() {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="px-2 py-2 rounded-lg shadow-md text-button-text bg-button-bg hover:bg-header transition duration-200 ease-in-out transform hover:scale-105 flex flex-row items-center justify-between gap-2">
-              <img className="w-5 h-5" src={cartLogo} alt="cart" />
-              <span className="text-sm font-semibold">{cartItems.length}</span>
-            </button>
-            <button
-              onClick={toggleLoginModal}
-              className="px-2 py-2 rounded-lg text-button-text text-sm bg-button-bg hover:bg-header transition"
-            >
-              {isRegisterMode ? 'Register' : 'Login'}
-            </button>
-          </div>
+            <NavLink to="/cart" className="flex items-center space-x-2">
+              <button className="px-3 py-2 rounded-lg shadow-md text-button-text bg-button-bg hover:bg-header transition duration-200 ease-in-out transform hover:scale-105 flex items-center gap-2">
+                <img className="w-5 h-5" src={cartLogo} alt="cart" />
+                <span className="text-sm font-semibold">{cartItems.length}</span>
+              </button>
+            </NavLink>
+  
+      <button
+        onClick={toggleLoginModal}
+        className="px-3 py-2 rounded-lg text-button-text text-sm bg-button-bg hover:bg-header transition duration-200 ease-in-out"
+      >
+        {isRegisterMode ? 'Register' : 'Login'}
+      </button>
+    </div>
 
           {/* Mobile Navigation Toggle */}
           <div className="flex md:hidden">
@@ -197,10 +201,12 @@ function Header() {
                 </NavLink>
               </ul>
               <div className="flex flex-col space-y-2 gap-1">
+                <NavLink to="/cart">
                 <button className="w-1/2 px-4 py-2 text-button-text bg-button-bg text-sm rounded hover:bg-header transition flex items-center justify-evenly">
                   <img className="w-6 h-6" src={cartLogo} alt="cart" />
                   <span className="text-sm font-semibold">{cartItems.length}</span>
                 </button>
+                </NavLink>
                 <button
                   onClick={toggleLoginModal}
                   className="w-1/2 px-4 py-2 border-2 border-button-bg text-button-text rounded hover:bg-button-bg hover:text-header transition"

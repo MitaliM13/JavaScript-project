@@ -1,0 +1,31 @@
+/* ChatRoom.css */
+.chat-window {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .messages {
+    overflow-y: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .message-bubble {
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+    max-width: 60%;
+  }
+  
+  .chat-input {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .user-sidebar {
+    height: 70vh;
+    overflow-y: auto;
+  }
+  

@@ -5,6 +5,7 @@ import Hero from './components/Hero.jsx'
 import Special from './components/Special.jsx'
 import Products from './components/Products.jsx'
 import Contact from './components/Contact.jsx'
+import Cart from './components/Cart.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: '/contact',
         element: <Contact />,
       },
+      {
+        path: '/cart',
+        element: <Cart />,
+      }
     ],
   },
 ])

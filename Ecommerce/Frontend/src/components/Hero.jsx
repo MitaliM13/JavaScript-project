@@ -14,8 +14,6 @@ function Hero() {
         </NavLink>
       </div>
 
-      <iframe src="https://videos.pexels.com/video-files/6841962/6841962-sd_640_360_25fps.mp4"></iframe>
-
       <img
       src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=600"
       alt="Hero"

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { CartContext } from '../context/ContextProvider'; // Use correct import
+import { CartContext } from '../context/ContextProvider'; 
 
 function Products() {
   const [data, setData] = useState([]);
@@ -43,6 +43,11 @@ function Products() {
     setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 5);
   };
 
+  const addToCart = (product) => {
+    console.log('Adding to cart:', product);
+    dispatch({ type: 'Add', payload: product });
+  };
+
   return (
     <div className="bg-background w-full min-h-screen flex justify-center py-20 px-4">
       <div className="max-w-6xl w-full">
@@ -80,7 +85,7 @@ function Products() {
               </button>
               <button
                 className="bg-active-link hover:bg-hover-link text-button-text font-semibold py-2 px-4 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
-                onClick={() => dispatch({ type: 'Add', product: item })}
+                onClick={() => addToCart(item)}
               >
                 Add to Cart
               </button>
