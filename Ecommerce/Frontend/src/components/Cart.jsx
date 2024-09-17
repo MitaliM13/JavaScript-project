@@ -52,19 +52,19 @@ const Cart = () => {
                   </div>
                   <div className="flex items-center justify-between space-x-2">
                     <button
-                      className="bg-button-bg hover:bg-active-link text-white font-bold py-2 px-4 rounded transition-all duration-300"
-                      onClick={() => handleIncreaseQuantity(product.id)}
-                    >
-                      +
-                    </button>
-                    <button
-                      className="bg-button-bg hover:bg-active-link text-white font-bold py-2 px-4 rounded transition-all duration-300"
+                      className="bg-blue-600  hover:bg-blue-700 text-white font-bold py-2 px-4 text-xl rounded-full transition-all duration-300"
                       onClick={() => handleDecreaseQuantity(product.id)}
                     >
                       -
                     </button>
                     <button
-                      className="bg-slogan-text hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-all duration-300"
+                      className="bg-blue-600  hover:bg-blue-700 text-white w-full font-bold py-2 px-4 text-xl rounded-full transition-all duration-300"
+                      onClick={() => handleIncreaseQuantity(product.id)}
+                    >
+                      +
+                    </button>
+                    <button
+                      className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-all duration-300"
                       onClick={() => handleRemoveItem(product.id)}
                     >
                       Remove

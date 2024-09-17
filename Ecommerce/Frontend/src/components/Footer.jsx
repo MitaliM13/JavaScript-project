@@ -2,7 +2,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-header text-button-text py-10">
+    <footer className="bg-gray-700 text-button-text py-5">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-5">
         {/* About Section */}
         <div className="flex flex-col">
@@ -17,27 +17,27 @@ const Footer = () => {
           <h2 className="text-lg font-semibold mb-4 text-highlight-text">Quick Links</h2>
           <ul className="text-sm text-gray-300 space-y-2">
             <li>
-              <a href="#" className="hover:text-active-link transition-colors">
+              <a href="#" className="hover:text-indigo-500 transition-colors">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-active-link transition-colors">
+              <a href="#" className="hover:text-indigo-500 transition-colors">
                 Shop
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-active-link transition-colors">
+              <a href="#" className="hover:text-indigo-500 transition-colors">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-active-link transition-colors">
+              <a href="#" className="hover:text-indigo-500 transition-colors">
                 Contact Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-active-link transition-colors">
+              <a href="#" className="hover:text-indigo-500 transition-colors">
                 FAQ
               </a>
             </li>
@@ -58,27 +58,27 @@ const Footer = () => {
           <div className="flex space-x-4">
             <a
               href="#"
-              className="bg-gray-800 p-2 rounded-full hover:bg-button-bg transition-colors"
+              className="bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition-colors"
             >
-              <FaFacebookF className="text-xl text-button-text" />
+              <FaFacebookF className="text-xl text-white" />
             </a>
             <a
               href="#"
-              className="bg-gray-800 p-2 rounded-full hover:bg-button-bg transition-colors"
+              className="bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition-colors"
             >
-              <FaTwitter className="text-xl text-button-text" />
+              <FaTwitter className="text-xl text-white" />
             </a>
             <a
               href="#"
-              className="bg-gray-800 p-2 rounded-full hover:bg-button-bg transition-colors"
+              className="bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition-colors"
             >
-              <FaInstagram className="text-xl text-button-text" />
+              <FaInstagram className="text-xl text-white" />
             </a>
             <a
               href="#"
-              className="bg-gray-800 p-2 rounded-full hover:bg-button-bg transition-colors"
+              className="bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition-colors"
             >
-              <FaLinkedinIn className="text-xl text-button-text" />
+              <FaLinkedinIn className="text-xl text-white" />
             </a>
           </div>
         </div>

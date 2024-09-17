@@ -26,14 +26,14 @@ function Special() {
   ];
 
   return (
-    <div className="w-full h-auto bg-gradient-to-b from-pink-50 via-purple-50 to-indigo-50 pt-24 pb-10">
-      <h1 className="text-3xl font-bold text-heading-primary text-center mb-12">
+    <div className="w-full h-auto bg-white pt-24 pb-10">
+      <h1 className="text-3xl drop-shadow-lg font-bold text-center mb-12">
         Browse Our Collections
       </h1>
 
       <div className="relative flex items-center">
         <button
-          className="absolute left-0 z-10 p-2 text-heading-secondary hover:text-heading-primary transition-colors duration-300"
+          className="absolute left-0 z-10 p-2 text-gray-700 hover:text-gray-900 transition-colors duration-300"
           onClick={() => scroll('left')}
           style={{ marginLeft: '10px' }}
         >
@@ -48,7 +48,7 @@ function Special() {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="min-w-[200px] flex flex-col items-center mx-3 my-2 bg-white p-6 rounded-3xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] transition-shadow duration-300"
+              className="min-w-[200px] flex flex-col items-center mx-3 my-2  p-6 rounded-3xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] transition-shadow duration-300"
             >
               <img
                 src={category.img}
@@ -63,7 +63,7 @@ function Special() {
         </div>
 
         <button
-          className="absolute right-0 z-10 p-2 text-heading-secondary hover:text-heading-primary transition-colors duration-300"
+          className="absolute right-0 z-10 p-2 text-gray-700 hover:text-gray-900 transition-colors duration-300"
           onClick={() => scroll('right')}
           style={{ marginRight: '20px' }}
         >
@@ -72,24 +72,24 @@ function Special() {
       </div>
 
       <div className="flex flex-row items-center mx-14 gap-10 my-14 opacity-80">
-        <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <MdOutlineShoppingBag size={36} className="text-shopping-bag mb-2" />
+        <div className="flex flex-col items-center p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <MdOutlineShoppingBag size={36} className="text-rose-500 mb-2" />
           <h1 className="text-md font-semibold text-heading-primary">Free Shipping Worldwide</h1>
           <p className="text-sm text-gray-600 mt-1 text-center">
             Enjoy our global free shipping on every order, no minimum purchase required!
           </p>
         </div>
 
-        <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <FaMoneyBillTransfer size={36} className="text-money mb-2" />
+        <div className="flex flex-col items-center p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <FaMoneyBillTransfer size={36} className="text-green-600 mb-2" />
           <h1 className="text-md font-semibold text-heading-primary">Money Back Guarantee</h1>
           <p className="text-sm text-gray-600 mt-1 text-center">
             Shop with confidence—get a full refund within 30 days if you're not satisfied.
           </p>
         </div>
 
-        <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <RiCustomerService2Fill size={36} className="text-icon mb-2" />
+        <div className="flex flex-col items-center p-4 bg-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <RiCustomerService2Fill size={36} className="text-yellow-500 mb-2" />
           <h1 className="text-md font-semibold text-heading-primary">Customer Support 24/7</h1>
           <p className="text-sm text-gray-600 mt-1 text-center">
             Our friendly support team is here to assist you anytime, day or night.

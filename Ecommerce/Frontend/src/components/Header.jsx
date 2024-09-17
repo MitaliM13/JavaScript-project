@@ -68,11 +68,11 @@ function Header() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 h-[55px] py-2 z-20 shadow-lg bg-header">
+      <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 h-[55px] py-2 z-20 shadow-lg bg-indigo-800">
         <nav className="flex items-center justify-between w-full">
           {/* Logo */}
           <div className="flex items-center space-x-3 p-3 rounded-full hover:shadow-xl transition-shadow duration-200">
-            <h1 className="font-serif font-bold text-2xl text-active-link">NovaCart</h1>
+            <h1 className="font-serif font-extrabold text-2xl text-white">NovaCart</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -80,7 +80,7 @@ function Header() {
             <NavLink
               to="/hero"
               className={({ isActive }) =>
-                `hover:text-hover-link ${isActive ? 'text-active-link font-bold' : ' text-nav-text'} cursor-pointer transition`
+                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-black'} cursor-pointer transition`
               }
             >
               <li>Home</li>
@@ -88,7 +88,7 @@ function Header() {
             <NavLink
               to="/special"
               className={({ isActive }) =>
-                `hover:text-hover-link ${isActive ? 'text-active-link font-bold' : ' text-nav-text'} cursor-pointer transition`
+                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-black'} cursor-pointer transition`
               }
             >
               <li>Collections</li>
@@ -96,7 +96,7 @@ function Header() {
             <NavLink
               to="/products"
               className={({ isActive }) =>
-                `hover:text-hover-link ${isActive ? 'text-active-link font-bold' : ' text-nav-text'} cursor-pointer transition`
+                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-black'} cursor-pointer transition`
               }
             >
               <li>Shop now</li>
@@ -104,7 +104,7 @@ function Header() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `hover:text-hover-link ${isActive ? 'text-active-link font-bold' : ' text-nav-text'} cursor-pointer transition`
+                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-nav-text'} cursor-pointer transition`
               }
             >
               <li>Contact Us</li>
@@ -114,16 +114,16 @@ function Header() {
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <NavLink to="/cart" className="flex items-center space-x-2">
-              <button className="px-3 py-2 rounded-lg shadow-md text-button-text bg-button-bg hover:bg-header transition duration-200 ease-in-out transform hover:scale-105 flex items-center gap-2">
+              <button className="px-3 py-2 rounded-lg shadow-md text-white bg-blue-600 hover:bg-header transition duration-200 ease-in-out transform hover:scale-105 flex items-center gap-2">
                 <img className="w-5 h-5" src={cartLogo} alt="cart" />
-                <span className="text-sm font-semibold">{cart.length}</span>
+                <span className="text-sm  font-semibold">{cart.length}</span>
               </button>
             </NavLink>
   
       <NavLink to = "/login">
       <button
         
-        className="px-3 py-2 rounded-lg text-button-text text-sm bg-button-bg hover:bg-header transition duration-200 ease-in-out"
+        className="px-3 py-2 rounded-lg shadow-md text-white bg-blue-600 text-sm hover:bg-header transition duration-200 ease-in-out transform hover:scale-105 flex items-center"
       >
         Login
       </button>
@@ -141,7 +141,7 @@ function Header() {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2}
-                stroke="currentColor"
+                stroke="black"
                 className="w-6 h-6"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
@@ -153,7 +153,7 @@ function Header() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-end">
-            <div className="w-64 bg-header text-nav-text shadow-lg flex flex-col p-4 space-y-4">
+            <div className="w-64 bg-indigo-800 text-nav-text shadow-lg flex flex-col p-4 space-y-4">
               <button
                 className="self-end text-nav-text hover:text-active-link focus:outline-none"
                 onClick={toggleMobileMenu}
@@ -163,7 +163,7 @@ function Header() {
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={2}
-                  stroke="currentColor"
+                  stroke="black"
                   className="w-6 h-6"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -173,7 +173,7 @@ function Header() {
                 <NavLink
                   to="/hero"
                   className={({ isActive }) =>
-                    `block px-4 py-2 rounded-lg ${isActive ? 'text-active-link' : 'text-nav-text'} hover:bg-nav-text hover:text-header transition`
+                    `block px-4 py-2 rounded-lg ${isActive ? 'text-white font-bold'  : 'text-white'} hover:bg-indigo-600 transition`
                   }
                 >
                   <li>Home</li>
@@ -181,7 +181,7 @@ function Header() {
                 <NavLink
                   to="/special"
                   className={({ isActive }) =>
-                    `block px-4 py-2 rounded-lg ${isActive ? 'text-active-link' : 'text-nav-text'} hover:bg-nav-text hover:text-header transition`
+                    `block px-4 py-2 rounded-lg ${isActive ? 'text-white font-bold'  : 'text-white'} hover:bg-indigo-600 hover:text-header transition`
                   }
                 >
                   <li>Collections</li>
@@ -189,7 +189,7 @@ function Header() {
                 <NavLink
                   to="/products"
                   className={({ isActive }) =>
-                    `block px-4 py-2 rounded-lg ${isActive ? 'text-active-link' : 'text-nav-text'} hover:bg-nav-text hover:text-header transition`
+                    `block px-4 py-2 rounded-lg ${isActive ? 'text-white font-bold'  : 'text-white'} hover:bg-indigo-600 hover:text-header transition`
                   }
                 >
                   <li>Shop now</li>
@@ -197,7 +197,7 @@ function Header() {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    `block px-4 py-2 rounded-lg ${isActive ? 'text-active-link' : 'text-nav-text'} hover:bg-nav-text hover:text-header transition`
+                    `block px-4 py-2 rounded-lg ${isActive ? 'text-white font-bold'  : 'text-white'} hover:bg-indigo-600 hover:text-header transition`
                   }
                 >
                   <li>Contact Us</li>
@@ -205,7 +205,7 @@ function Header() {
               </ul>
               <div className="flex flex-col space-y-2 gap-1">
                 <NavLink to="/cart">
-                <button className="w-1/2 px-4 py-2 text-button-text bg-button-bg text-sm rounded hover:bg-header transition flex items-center justify-evenly">
+                <button className="w-1/2 px-4 py-2 text-white bg-blue-600 text-sm rounded hover:bg-indigo-600 shadow-md transition flex items-center justify-evenly">
                   <img className="w-6 h-6" src={cartLogo} alt="cart" />
                   <span className="text-sm font-semibold">{cart.length}</span>
                 </button>
@@ -213,9 +213,10 @@ function Header() {
                 <NavLink to="/login">
                 <button
                   // onClick={toggleLoginModal}
-                  className="w-1/2 px-4 py-2 border-2 border-button-bg text-button-text rounded hover:bg-button-bg hover:text-header transition"
+                  className="w-1/2 px-4 py-2  text-white bg-blue-600 text-sm shadow-md rounded hover:bg-indigo-600 hover:text-header transition"
                 >
                   {/* {isRegisterMode ? 'Register' : 'Login'} */}
+                  Login
                 </button>
                 </NavLink>
               </div>

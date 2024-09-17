@@ -72,15 +72,15 @@ function Products() {
   
 
   return (
-    <div className="bg-background w-full min-h-screen flex justify-center py-20 px-4">
+    <div className=" w-full min-h-screen flex justify-center py-20 px-4">
       <div className="max-w-6xl w-full">
         <div className='grid grid-cols-1 sm:grid-cols-2 '>
-        <h1 className="text-3xl md:text-4xl font-bold text-heading-primary text-left mb-8 drop-shadow-lg">
+        <h1 className="text-3xl md:text-4xl font-bold text-left mb-8 drop-shadow-lg">
           Shop By Category
         </h1>
 
         {/* Search Product */}
-        <div className="flex items-center  gap-2 mb-8">
+        <div className="flex items-center gap-2 mb-8">
           <input
             type="text"
             placeholder="Search for the products..."
@@ -96,24 +96,26 @@ function Products() {
           {data.slice(0, visibleProducts).map((item) => (
             <div
               key={item.id}
-              className="group relative bg-card-bg rounded-lg shadow-card-shadow overflow-hidden p-4 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group relative shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] rounded-lg overflow-hidden p-4 hover:shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] transition-all duration-300 transform hover:scale-105"
             >
               <img className="w-full h-40 object-cover rounded-md" src={item.image} alt={item.name} />
               <h2 className="text-lg font-semibold text-gray-800 mt-3">{item.name}</h2>
               <p className="text-button-bg text-md font-medium mt-1">Rs: {item.price}</p>
 
+              <div className='grid grid-cols-2 gap-2 '>
               <button
-                className="bg-button-bg hover:bg-hover-link text-button-text text-sm font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-indigo-600 hover:bg-hover-link text-button-text text-[12px] font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => handleViewDetails(item)}
               >
                 View Details
               </button>
               <button
-                className="bg-active-link hover:bg-hover-link text-button-text text-sm font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-blue-600  text-button-text text-[12px] font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => addToCart(item)} 
               >
                 Add to Cart
               </button>
+              </div>
             </div>
           ))}
         </div>
@@ -131,9 +133,9 @@ function Products() {
         {/* Product Details Modal */}
         {selectedProduct && (
           <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center transition-opacity duration-300">
-            <div className="relative bg-card-bg shadow-lg p-6 rounded-lg w-[90%] max-w-4xl max-h-[90%] overflow-y-auto transition-transform duration-300">
+            <div className="relative bg-white shadow-lg p-6 rounded-lg w-[90%] max-w-4xl max-h-[90%] overflow-y-auto transition-transform duration-300">
               <button
-                className="absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-800"
+                className="absolute top-2 right-2 p-2 text-gray-700 hover:text-gray-800"
                 onClick={handleCloseDetails}
               >
                 &times;
@@ -147,7 +149,7 @@ function Products() {
                   <p className="text-gray-700 mb-4">{selectedProduct.detail}</p>
                   <p className="text-button-bg text-xl font-medium">Price: Rs {selectedProduct.price}</p>
                   <button
-                    className="bg-button-bg hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105"
+                    className="bg-indigo-600 hover:bg-red-600 text-white font-semibold text-sm py-2 px-4 rounded-full mt-2 transition duration-300 transform hover:scale-105"
                     onClick={handleCloseDetails}
                   >
                     Close

@@ -2,13 +2,13 @@ import { NavLink } from 'react-router-dom';
 
 function Hero() {
   return (
-    <div className="w-full h-screen bg-background flex flex-col-reverse md:flex-row items-center justify-evenly relative overflow-hidden px-6 md:px-16">
+    <div className="w-full h-screen bg-white flex flex-col-reverse md:flex-row items-center justify-evenly relative overflow-hidden px-6 md:px-16">
       <div className="flex flex-col z-10 max-w-xl text-center md:text-left">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-highlight-text leading-tight drop-shadow-lg mb-6">
           Discover. Shop. Thrive. Your Style, Your Way.
         </h1>
         <NavLink to="/products">
-          <button className="px-6 py-3 bg-button-bg text-button-text font-semibold rounded-full shadow-md hover:bg-hover-link hover:text-button-text transition transform hover:scale-105 focus:outline-none">
+          <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-hover-link hover:text-button-text transition transform hover:scale-105 focus:outline-none">
             Shop Now
           </button>
         </NavLink>

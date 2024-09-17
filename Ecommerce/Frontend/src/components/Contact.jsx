@@ -1,11 +1,11 @@
 const Contact = () => {
   return (
-    <div className="relative bg-background min-h-screen py-20 px-6 md:px-12">
+    <div className="relative min-h-screen py-20 px-6 md:px-12">
 
       <div className="absolute inset-0 bg-[url('')] bg-cover bg-center opacity-20"></div>
 
-      <div className="relative text-center mb-16">
-        <h1 className="text-5xl font-extrabold text-heading-primary mb-4">
+      <div className="relative text-center mb-16 ">
+        <h1 className="text-3xl drop-shadow-lg font-extrabold  mb-4">
           Connect With Us – We’re Here for You!
         </h1>
         <p className="text-lg text-gray-800">
@@ -14,7 +14,7 @@ const Contact = () => {
       </div>
 
       {/* Contact Form and Map Section */}
-      <div className="relative flex flex-col md:flex-row gap-12 items-start bg-div-bg-secondary rounded-xl shadow-lg p-8">
+      <div className="relative flex flex-col md:flex-row gap-12 items-start bg-gray-100 rounded-xl shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] p-8">
         {/* Contact Form */}
         <div className="flex-1 md:w-1/2">
           <h2 className="text-3xl font-semibold text-heading-primary mb-6">Get in Touch</h2>
@@ -60,7 +60,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-button-bg text-button-text py-3 rounded-md shadow-md hover:bg-hover-link transition-transform transform hover:scale-105"
+              className="w-full bg-indigo-600 text-white py-3 rounded-md shadow-md hover:bg-hover-link transition-transform transform hover:scale-105"
             >
               Send Message
             </button>
