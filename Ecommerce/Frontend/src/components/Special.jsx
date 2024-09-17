@@ -73,7 +73,7 @@ function Special() {
 
       <div className="flex flex-row items-center mx-14 gap-10 my-14 opacity-80">
         <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <MdOutlineShoppingBag size={36} className="text-indigo-500 mb-2" />
+          <MdOutlineShoppingBag size={36} className="text-shopping-bag mb-2" />
           <h1 className="text-md font-semibold text-heading-primary">Free Shipping Worldwide</h1>
           <p className="text-sm text-gray-600 mt-1 text-center">
             Enjoy our global free shipping on every order, no minimum purchase required!
@@ -81,7 +81,7 @@ function Special() {
         </div>
 
         <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <FaMoneyBillTransfer size={36} className="text-indigo-500 mb-2" />
+          <FaMoneyBillTransfer size={36} className="text-money mb-2" />
           <h1 className="text-md font-semibold text-heading-primary">Money Back Guarantee</h1>
           <p className="text-sm text-gray-600 mt-1 text-center">
             Shop with confidence—get a full refund within 30 days if you're not satisfied.
@@ -89,7 +89,7 @@ function Special() {
         </div>
 
         <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <RiCustomerService2Fill size={36} className="text-indigo-500 mb-2" />
+          <RiCustomerService2Fill size={36} className="text-icon mb-2" />
           <h1 className="text-md font-semibold text-heading-primary">Customer Support 24/7</h1>
           <p className="text-sm text-gray-600 mt-1 text-center">
             Our friendly support team is here to assist you anytime, day or night.

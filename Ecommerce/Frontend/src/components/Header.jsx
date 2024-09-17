@@ -120,12 +120,14 @@ function Header() {
               </button>
             </NavLink>
   
+      <NavLink to = "/login">
       <button
-        onClick={toggleLoginModal}
+        
         className="px-3 py-2 rounded-lg text-button-text text-sm bg-button-bg hover:bg-header transition duration-200 ease-in-out"
       >
-        {isRegisterMode ? 'Register' : 'Login'}
+        Login
       </button>
+      </NavLink>
     </div>
 
           {/* Mobile Navigation Toggle */}
@@ -208,19 +210,21 @@ function Header() {
                   <span className="text-sm font-semibold">{cart.length}</span>
                 </button>
                 </NavLink>
+                <NavLink to="/login">
                 <button
-                  onClick={toggleLoginModal}
+                  // onClick={toggleLoginModal}
                   className="w-1/2 px-4 py-2 border-2 border-button-bg text-button-text rounded hover:bg-button-bg hover:text-header transition"
                 >
-                  {isRegisterMode ? 'Register' : 'Login'}
+                  {/* {isRegisterMode ? 'Register' : 'Login'} */}
                 </button>
+                </NavLink>
               </div>
             </div>
           </div>
         )}
 
         {/* Login/Register Modal */}
-        {isLoginModalOpen && (
+        {/* {isLoginModalOpen && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
     <div className="relative bg-white p-6 rounded-lg bg-background shadow-lg w-80">
       <button
@@ -293,7 +297,7 @@ function Header() {
       </form>
     </div>
   </div>
-)}
+)} */}
 
       </header>
     </>

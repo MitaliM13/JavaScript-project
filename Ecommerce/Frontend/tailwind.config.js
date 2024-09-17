@@ -23,6 +23,9 @@ export default {
       'highlight-text': '#FF8C8C',
       'heading-primary': '#881337',
       'heading-secondary': '#FF5C5C',
+      'money': '#588157',
+      'shopping-bag': '#f4a261',
+      'icon': '#264653'
     },
   },
   plugins: [],

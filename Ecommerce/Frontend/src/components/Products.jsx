@@ -74,21 +74,23 @@ function Products() {
   return (
     <div className="bg-background w-full min-h-screen flex justify-center py-20 px-4">
       <div className="max-w-6xl w-full">
-        <h1 className="text-3xl md:text-4xl font-bold text-heading-primary text-center mb-8 drop-shadow-lg">
+        <div className='grid grid-cols-1 sm:grid-cols-2 '>
+        <h1 className="text-3xl md:text-4xl font-bold text-heading-primary text-left mb-8 drop-shadow-lg">
           Shop By Category
         </h1>
 
         {/* Search Product */}
-        <div className="flex items-center justify-center gap-2 mb-8">
+        <div className="flex items-center  gap-2 mb-8">
           <input
             type="text"
             placeholder="Search for the products..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-1/3 p-2 border border-card-border rounded-md focus:outline-none focus:ring-2 focus:ring-highlight-text"
+            className="w-1/2 p-2 border border-card-border rounded-md focus:outline-none focus:ring-2 focus:ring-highlight-text"
           />
         </div>
 
+        </div>
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {data.slice(0, visibleProducts).map((item) => (
@@ -101,13 +103,13 @@ function Products() {
               <p className="text-button-bg text-md font-medium mt-1">Rs: {item.price}</p>
 
               <button
-                className="bg-button-bg hover:bg-hover-link text-button-text font-semibold py-2 px-4 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-button-bg hover:bg-hover-link text-button-text text-sm font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => handleViewDetails(item)}
               >
                 View Details
               </button>
               <button
-                className="bg-active-link hover:bg-hover-link text-button-text font-semibold py-2 px-4 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-active-link hover:bg-hover-link text-button-text text-sm font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => addToCart(item)} 
               >
                 Add to Cart

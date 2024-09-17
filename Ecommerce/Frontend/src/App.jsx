@@ -6,6 +6,7 @@ import Special from './components/Special.jsx'
 import Products from './components/Products.jsx'
 import Contact from './components/Contact.jsx'
 import Cart from './components/Cart.jsx'
+import Login from './components/Login.jsx'
 
 
 
@@ -37,7 +38,11 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
-      }
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
     ],
   },
 ])
