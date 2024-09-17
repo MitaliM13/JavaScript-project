@@ -1,42 +1,16 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import cartLogo from '../image/shopping-cart.png';
 import { CartContext } from '../context/ContextProvider';
-import axios from 'axios';
 
 const Cart = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false); // Cart visibility state
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
   const { cart, dispatch } = useContext(CartContext);
 
-  useEffect(() => {
-    // Store cart in localStorage on change
-    console.log(cart);
-    
-    localStorage.setItem('cartItems', JSON.stringify(cart));
-  }, [cart]);
-
   // useEffect(() => {
-  //   const controller = new AbortController();
-  //   const fetchData = async () => {
-  //     try {
-  //       setLoading(true);
-  //       setError(false);
-  //       const response = await axios.get('/api/products', { signal: controller.signal });
-  //       setData(response.data);
-  //     } catch (error) {
-  //       setError(true);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fetchData();
+  //   // Store cart in localStorage on change
+    
+  //   localStorage.setItem('cartItems', JSON.stringify(cart));
+  // }, [cart]);
 
-  //   return () => {
-  //     controller.abort(); // Clean up in case of unmount
-  //   };
-  // }, []);
 
   const handleRemoveItem = (productId) => {
     dispatch({ type: 'Remove', id: productId });

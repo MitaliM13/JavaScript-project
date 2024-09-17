@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import Cart from './Cart';
+import { CartContext } from '../context/ContextProvider';
 import cartLogo from '../image/shopping-cart.png';
 
 function Header() {
@@ -10,7 +10,8 @@ function Header() {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const [passwordError, setPasswordError] = useState('');
   const [isPasswordValid, setIsPasswordValid] = useState(true);
-  const [cartItems, setCartItems] = useState([]);
+  // const [cartItems, setCartItems] = useState([]);
+  const {cart} = useContext(CartContext);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -115,7 +116,7 @@ function Header() {
             <NavLink to="/cart" className="flex items-center space-x-2">
               <button className="px-3 py-2 rounded-lg shadow-md text-button-text bg-button-bg hover:bg-header transition duration-200 ease-in-out transform hover:scale-105 flex items-center gap-2">
                 <img className="w-5 h-5" src={cartLogo} alt="cart" />
-                <span className="text-sm font-semibold">{cartItems.length}</span>
+                <span className="text-sm font-semibold">{cart.length}</span>
               </button>
             </NavLink>
   
@@ -204,7 +205,7 @@ function Header() {
                 <NavLink to="/cart">
                 <button className="w-1/2 px-4 py-2 text-button-text bg-button-bg text-sm rounded hover:bg-header transition flex items-center justify-evenly">
                   <img className="w-6 h-6" src={cartLogo} alt="cart" />
-                  <span className="text-sm font-semibold">{cartItems.length}</span>
+                  <span className="text-sm font-semibold">{cart.length}</span>
                 </button>
                 </NavLink>
                 <button

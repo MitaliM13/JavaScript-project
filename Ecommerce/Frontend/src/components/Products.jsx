@@ -10,7 +10,7 @@ function Products() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [search, setSearch] = useState('');
   const [visibleProducts, setVisibleProducts] = useState(5);
-  const { dispatch } = useContext(CartContext);
+  const { cart, dispatch } = useContext(CartContext);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -31,6 +31,14 @@ function Products() {
     };
   }, [search]);
 
+  useEffect(() => {
+    const storedCartItem = localStorage.getItem('cartItems');
+    if(storedCartItem) {
+      dispatch({ type: 'Load', payload: JSON.parse(storedCartItem) });
+    }
+  }, [dispatch]);
+
+
   const handleViewDetails = (product) => {
     setSelectedProduct(product);
   };
@@ -47,6 +55,11 @@ function Products() {
     console.log('Adding to cart:', product);
     dispatch({ type: 'Add', payload: product });
   };
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+  }, [cart]);
+  
 
   return (
     <div className="bg-background w-full min-h-screen flex justify-center py-20 px-4">
@@ -85,7 +98,7 @@ function Products() {
               </button>
               <button
                 className="bg-active-link hover:bg-hover-link text-button-text font-semibold py-2 px-4 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
-                onClick={() => addToCart(item)}
+                onClick={() => addToCart(item)} 
               >
                 Add to Cart
               </button>

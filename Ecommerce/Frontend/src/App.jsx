@@ -7,6 +7,8 @@ import Products from './components/Products.jsx'
 import Contact from './components/Contact.jsx'
 import Cart from './components/Cart.jsx'
 
+
+
 const router = createBrowserRouter([
   {
     path: '/',

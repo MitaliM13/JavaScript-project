@@ -1,8 +1,9 @@
+/* eslint-disable no-case-declarations */
 const CartReducer = (state, action) => {
     switch (action.type) {
       case "Add":
         // Check if the product already exists in the cart
-        const existingProductIndex = state.findIndex(p => p.id === action.product.id);
+        const existingProductIndex = state.findIndex(p => p.id === action.payload.id);
         if (existingProductIndex !== -1) {
           // If the product exists, increase its quantity
           const updatedState = [...state];
@@ -13,7 +14,7 @@ const CartReducer = (state, action) => {
           return updatedState;
         } else {
           // Add new product with quantity of 1
-          return [...state, { ...action.product, quantity: 1 }];
+          return [...state, { ...action.payload, quantity: 1 }];
         }
   
       case "Remove":
