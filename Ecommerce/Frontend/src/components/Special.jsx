@@ -48,7 +48,7 @@ function Special() {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="min-w-[200px] flex flex-col items-center mx-3 my-2 bg-white p-6 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="min-w-[200px] flex flex-col items-center mx-3 my-2 bg-white p-6 rounded-3xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] transition-shadow duration-300"
             >
               <img
                 src={category.img}

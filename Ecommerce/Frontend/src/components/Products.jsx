@@ -12,6 +12,16 @@ function Products() {
   const [visibleProducts, setVisibleProducts] = useState(5);
   const { cart, dispatch } = useContext(CartContext);
 
+  // Shuffle function using Fisher-Yates algorithm
+  const shuffleArray = (array) => {
+    let shuffled = array.slice(); // Copy the array
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Swap
+    }
+    return shuffled;
+  };
+
   useEffect(() => {
     const controller = new AbortController();
     (async () => {
@@ -19,7 +29,8 @@ function Products() {
         setLoading(true);
         setError(false);
         const response = await axios.get('/api/products?search=' + search, { signal: controller.signal });
-        setData(response.data);
+        // Shuffle the data here after fetching
+        setData(shuffleArray(response.data));
       } catch (error) {
         setError(true);
       } finally {
@@ -37,7 +48,6 @@ function Products() {
       dispatch({ type: 'Load', payload: JSON.parse(storedCartItem) });
     }
   }, [dispatch]);
-
 
   const handleViewDetails = (product) => {
     setSelectedProduct(product);

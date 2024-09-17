@@ -222,7 +222,7 @@ function Header() {
         {/* Login/Register Modal */}
         {isLoginModalOpen && (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-    <div className="relative bg-white p-6 rounded-lg bg-active-link shadow-lg w-80">
+    <div className="relative bg-white p-6 rounded-lg bg-background shadow-lg w-80">
       <button
         onClick={toggleLoginModal}
         className="absolute top-2 right-2 text-gray-600 hover:text-active-link"
