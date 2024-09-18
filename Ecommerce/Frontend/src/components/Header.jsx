@@ -80,7 +80,7 @@ function Header() {
             <NavLink
               to="/hero"
               className={({ isActive }) =>
-                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-black'} cursor-pointer transition`
+                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-white'} cursor-pointer transition`
               }
             >
               <li>Home</li>
@@ -88,7 +88,7 @@ function Header() {
             <NavLink
               to="/special"
               className={({ isActive }) =>
-                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-black'} cursor-pointer transition`
+                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-white'} cursor-pointer transition`
               }
             >
               <li>Collections</li>
@@ -96,7 +96,7 @@ function Header() {
             <NavLink
               to="/products"
               className={({ isActive }) =>
-                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-black'} cursor-pointer transition`
+                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-white'} cursor-pointer transition`
               }
             >
               <li>Shop now</li>
@@ -104,7 +104,7 @@ function Header() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-nav-text'} cursor-pointer transition`
+                `hover:text-blue-300 ${isActive ? 'text-white font-semibold' : ' text-white'} cursor-pointer transition`
               }
             >
               <li>Contact Us</li>

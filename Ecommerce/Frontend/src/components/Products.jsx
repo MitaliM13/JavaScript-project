@@ -104,13 +104,13 @@ function Products() {
 
               <div className='grid grid-cols-2 gap-2 '>
               <button
-                className="bg-indigo-600 hover:bg-hover-link text-button-text text-[12px] font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-indigo-600 text-white text-[12px] font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => handleViewDetails(item)}
               >
                 View Details
               </button>
               <button
-                className="bg-blue-600  text-button-text text-[12px] font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+                className="bg-blue-600  text-white text-[12px] font-semibold py-2 px-2 mt-2 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                 onClick={() => addToCart(item)} 
               >
                 Add to Cart
