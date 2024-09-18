@@ -10,7 +10,6 @@ function Header() {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
   const [passwordError, setPasswordError] = useState('');
   const [isPasswordValid, setIsPasswordValid] = useState(true);
-  // const [cartItems, setCartItems] = useState([]);
   const {cart} = useContext(CartContext);
 
   const toggleMobileMenu = () => {
@@ -70,9 +69,8 @@ function Header() {
     <>
       <header className="absolute top-0 left-0 w-full flex items-center justify-between px-6 h-[55px] py-2 z-20 shadow-lg bg-indigo-800">
         <nav className="flex items-center justify-between w-full">
-          {/* Logo */}
-          <div className="flex items-center space-x-3 p-3 rounded-full hover:shadow-xl transition-shadow duration-200">
-            <h1 className="font-serif font-extrabold text-2xl text-white">NovaCart</h1>
+          <div className="flex items-center space-x-3 p-3 cursor-pointer rounded-full">
+            <h1 className="font-serif font-extrabold text-2xl text-white hover:drop-shadow-lg ">NovaCart</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -212,10 +210,8 @@ function Header() {
                 </NavLink>
                 <NavLink to="/login">
                 <button
-                  // onClick={toggleLoginModal}
                   className="w-1/2 px-4 py-2  text-white bg-blue-600 text-sm shadow-md rounded hover:bg-indigo-600 hover:text-header transition"
                 >
-                  {/* {isRegisterMode ? 'Register' : 'Login'} */}
                   Login
                 </button>
                 </NavLink>
@@ -223,82 +219,6 @@ function Header() {
             </div>
           </div>
         )}
-
-        {/* Login/Register Modal */}
-        {/* {isLoginModalOpen && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-    <div className="relative bg-white p-6 rounded-lg bg-background shadow-lg w-80">
-      <button
-        onClick={toggleLoginModal}
-        className="absolute top-2 right-2 text-gray-600 hover:text-active-link"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-      <h2 className="text-lg font-semibold mb-4">
-        {isRegisterMode ? 'Register' : 'Login'}
-      </h2>
-      <form onSubmit={handleFormSubmit} className="space-y-4">
-        <input
-          type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleInputChange}
-          placeholder="Username"
-          className="w-full p-2 border border-gray-300 rounded"
-          required
-        />
-        {isRegisterMode && (
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="Email"
-            className="w-full p-2 border border-gray-300 rounded"
-            required
-          />
-        )}
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          placeholder="Password"
-          className="w-full p-2 border border-gray-300 rounded"
-          required
-        />
-        {passwordError && !isPasswordValid && (
-          <p className="text-red-500 text-sm">{passwordError}</p>
-        )}
-        <button
-          type="submit"
-          className="w-full py-2 bg-button-bg text-button-text rounded hover:bg-header transition"
-        >
-          {isRegisterMode ? 'Register' : 'Login'}
-        </button>
-        <p className="text-sm text-center">
-          {isRegisterMode ? 'Already have an account?' : 'Don\'t have an account?'}{' '}
-          <button
-            type="button"
-            onClick={() => setIsRegisterMode(!isRegisterMode)}
-            className="text-header font-semibold"
-          >
-            {isRegisterMode ? 'Login' : 'Register'}
-          </button>
-        </p>
-      </form>
-    </div>
-  </div>
-)} */}
 
       </header>
     </>

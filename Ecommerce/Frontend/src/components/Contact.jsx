@@ -1,26 +1,30 @@
 const Contact = () => {
   return (
-    <div className="relative min-h-screen py-20 px-6 md:px-12">
+    <div className="relative min-h-screen mt-7 py-10 px-4 sm:px-6 md:px-12">
 
       <div className="absolute inset-0 bg-[url('')] bg-cover bg-center opacity-20"></div>
 
-      <div className="relative text-center mb-16 ">
-        <h1 className="text-3xl drop-shadow-lg font-extrabold  mb-4">
+      {/* Contact Heading Section */}
+      <div className="relative text-center mb-12 md:mb-16">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl drop-shadow-lg font-extrabold mb-4">
           Connect With Us – We’re Here for You!
         </h1>
-        <p className="text-lg text-gray-800">
+        <p className="text-base sm:text-lg text-gray-800">
           We’d love to hear from you. Whether you have questions, feedback, or need support, reach out to us!
         </p>
       </div>
 
       {/* Contact Form and Map Section */}
-      <div className="relative flex flex-col md:flex-row gap-12 items-start bg-gray-100 rounded-xl shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] p-8">
+      <div className="relative flex flex-col md:flex-row gap-12 items-start bg-gray-100 rounded-xl shadow-lg p-6 sm:p-8 lg:p-12">
+        
         {/* Contact Form */}
-        <div className="flex-1 md:w-1/2">
-          <h2 className="text-3xl font-semibold text-heading-primary mb-6">Get in Touch</h2>
+        <div className="flex-1 w-full md:w-1/2">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-heading-primary mb-6">
+            Get in Touch
+          </h2>
           <form action="https://formspree.io/f/mdknvnnp" method="POST">
             <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm sm:text-base text-gray-700 mb-1">
                 Name:
               </label>
               <input
@@ -32,8 +36,9 @@ const Contact = () => {
                 required
               />
             </div>
+
             <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm sm:text-base text-gray-700 mb-1">
                 Email:
               </label>
               <input
@@ -45,8 +50,9 @@ const Contact = () => {
                 required
               />
             </div>
+
             <div className="mb-4">
-              <label htmlFor="message" className="block text-gray-700 mb-1">
+              <label htmlFor="message" className="block text-sm sm:text-base text-gray-700 mb-1">
                 Message:
               </label>
               <textarea
@@ -58,9 +64,10 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
+
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white py-3 rounded-md shadow-md hover:bg-hover-link transition-transform transform hover:scale-105"
+              className="w-full bg-indigo-600 text-white py-3 rounded-md shadow-md hover:bg-indigo-700 transition-transform transform hover:scale-105"
             >
               Send Message
             </button>
@@ -68,9 +75,11 @@ const Contact = () => {
         </div>
 
         {/* Map Section */}
-        <div className="flex-1 md:w-1/2 mt-8 md:mt-0">
-          <h2 className="text-3xl font-semibold text-heading-primary mb-6">Our Location</h2>
-          <div className="w-full h-72 bg-gray-200 rounded-md overflow-hidden shadow-md">
+        <div className="flex-1 w-full md:w-1/2">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-heading-primary mb-6">
+            Our Location
+          </h2>
+          <div className="w-full h-64 sm:h-72 bg-gray-200 rounded-md overflow-hidden shadow-md">
             <iframe
               title="Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.5350830956744!2d-122.08424968469178!3d37.42199977982536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba009847e175%3A0x4d05b8e1fc107d3!2sGoogleplex!5e0!3m2!1sen!2sus!4v1638941440354!5m2!1sen!2sus"

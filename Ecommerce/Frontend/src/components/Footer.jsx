@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-700 text-button-text py-5">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-5">
-        {/* About Section */}
+
         <div className="flex flex-col">
           <h2 className="text-lg font-semibold mb-4 text-highlight-text">About Us</h2>
           <p className="text-sm text-gray-300">
@@ -12,7 +12,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Links Section */}
         <div className="flex flex-col">
           <h2 className="text-lg font-semibold mb-4 text-highlight-text">Quick Links</h2>
           <ul className="text-sm text-gray-300 space-y-2">
@@ -44,7 +43,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Section */}
         <div className="flex flex-col">
           <h2 className="text-lg font-semibold mb-4 text-highlight-text">Contact Us</h2>
           <p className="text-sm text-gray-300">123 E-commerce St, Shop City, SC 12345</p>
@@ -52,7 +50,6 @@ const Footer = () => {
           <p className="text-sm text-gray-300">Email: support@ecommerce.com</p>
         </div>
 
-        {/* Social Media Section */}
         <div className="flex flex-col">
           <h2 className="text-lg font-semibold mb-4 text-highlight-text">Follow Us</h2>
           <div className="flex space-x-4">
@@ -84,7 +81,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="border-t border-gray-700 mt-8 pt-5 text-center text-sm text-gray-400">
         <p>© 2024 E-commerce Site. All rights reserved.</p>
       </div>
